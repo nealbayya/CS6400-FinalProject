@@ -284,8 +284,10 @@ def populate_graphdb_friends(conn):
 if __name__ == "__main__":
     conn = SocialDB("bolt://localhost:7687", "neo4j", "password")
     
-    #populate_graphdb_friends(conn)
-    #populate_graphdb_likes(conn)
+    populate_graphdb_tracks(conn)
+    populate_graphdb_people(conn)
+    populate_graphdb_likes(conn)
+    populate_graphdb_friends(conn)
 
     print(conn.most_popular_songs(5))
     conn.close()
